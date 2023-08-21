@@ -1,8 +1,9 @@
 <?php
-$hostname="localhost";
+$hostname="jbdc:mysql://sql6.freesqldatabase.com:3306/sql6641386
+";
 $username="root";
-$password="";
-$dbname="webtech";
+$password="eyrTh6Z6Ql";
+$dbname="sql6641386";
 $con=mysqli_connect($hostname,$username,$password,$dbname);
 if(!$con)
 {
