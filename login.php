@@ -86,13 +86,8 @@
             if (password_verify($password, $row['password'])) {
                 $_SESSION['user_id'] = $row['user_id'];
                 $_SESSION['role'] = $row['role'];
-                if ($_SESSION['role'] == 'admin') {
-                    header("location:adminuser.php");
-                    exit;
-                } else {
-                    header("location:student/home.php");
-                    exit;
-                }
+                header("location:index.php");
+                exit;
             } else {
                 echo "<script>showerr();</script>";
             }
