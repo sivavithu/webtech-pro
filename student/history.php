@@ -186,7 +186,7 @@
      }
     }
   else{
-    header("location:Login.php");
+    header("location:login.php");
    exit;
 } ?>
 </div>
