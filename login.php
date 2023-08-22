@@ -86,8 +86,9 @@
             if (password_verify($password, $row['password'])) {
                 $_SESSION['user_id'] = $row['user_id'];
                 $_SESSION['role'] = $row['role'];
-                header("location:index.php");
-                exit;
+               
+                  header("location:index.php");
+                  exit;
             } else {
                 echo "<script>showerr();</script>";
             }
@@ -100,6 +101,7 @@
     }
     
     }
+
     ?>
 
 
