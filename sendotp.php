@@ -43,7 +43,9 @@ if(isset($_SESSION['user_id']) && isset($_SESSION['email'])){
 
     $insertQuery = "INSERT INTO authenthication(user_id,timestamp,otp) VALUES ('$user','$date','$otp')";
     $result=mysqli_query($con,$insertQuery);
-   
+   $sql=select * from stmp where id='1';
+	$val=mysqli_connect($con,$sql);
+	$row=mysqli_fetch_assoc($val);
 
     $mail = new PHPMailer(true);
 
@@ -54,13 +56,13 @@ try {
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'travelguidearchive@gmail.com';                     // SMTP username
+    $mail->Username   = $row['email'];                     // SMTP username
     $mail->Password   = 'ugnlcwivmkrommgt';                               // SMTP password
     $mail->SMTPSecure = 'ssl';         
     $mail->Port       = 465;                                    // TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     // Recipients
-    $mail->setFrom('travelguidearchive@gmail.com', 'OTP');
+    $mail->setFrom('$row['email'], 'OTP');
     $mail->addAddress($email, 'OTP');     // Add a recipient
     
     // Content
