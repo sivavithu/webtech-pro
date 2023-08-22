@@ -29,7 +29,7 @@
     }
 
      if(isset($_POST['submit'])){
-         echo "sss";
+     
         if(isset($_POST['email'])){
             $email=$_POST['email'];
             
