@@ -15,11 +15,11 @@
 ?>
 
 <h1>hello admin</h1>
-    <a href="./logout.php"><button>logout</button></a>
+    <a href="/logout.php"><button>logout</button></a>
     
     <?php }
     else{
-        header("location:./login.php");
+        header("location:/login.php");
         exit;
     }
     
