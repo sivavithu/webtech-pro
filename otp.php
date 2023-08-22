@@ -44,10 +44,11 @@
             
             if(mysqli_num_rows($result)!=0){
                 $_SESSION['email']=$email;
-                echo "sss";
+                
                 $row = mysqli_fetch_assoc($result);
                 $_SESSION['user_id']=$row['user_id'];
-                echo "<script>window.location.href='/sendotp.php'</script>"'
+                header("location:/sendotp.php");
+                exit;
                 
 
             }
