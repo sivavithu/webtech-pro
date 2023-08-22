@@ -44,7 +44,7 @@ if(isset($_SESSION['user_id']) && isset($_SESSION['email'])){
     $insertQuery = "INSERT INTO authenthication(user_id,timestamp,otp) VALUES ('$user','$date','$otp')";
     $result=mysqli_query($con,$insertQuery);
    $sql="select * from stmp where id='1'";
-	$val=mysqli_connect($con,$sql);
+	$val=mysqli_query($con,$sql);
 	$row=mysqli_fetch_assoc($val);
 
     $mail = new PHPMailer(true);
