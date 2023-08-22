@@ -25,8 +25,13 @@
         <link rel="icon" href="f.png" sizes="120x120" type="image/png">
 
     </head>
-    <body>
+   
+    <?php  session_start();
+   
 
+ 
+   if(isset($_SESSION['user_id'])&& isset($_SESSION['role'])&& ($_SESSION['role']=='student'||$_SESSION['role']=='admin')){?>
+ <body>
         <div class="wrapper">
             <div class="top_navbar">
                 <div class="hamburger">
@@ -126,6 +131,12 @@
             </div>
         
         </div>	
-
+        
+  
     </body>
+    <?php }
+    else{
+        header("location:../login.php");
+       exit;
+    } ?>
 </html>
