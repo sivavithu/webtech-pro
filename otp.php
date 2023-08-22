@@ -134,7 +134,7 @@ function displayform1(){?>
         
         
         function sendOtp() {
-           window.location.href="sendotp.php";
+           window.location.href="/sendotp.php";
         }
         
 
