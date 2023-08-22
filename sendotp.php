@@ -43,7 +43,7 @@ if(isset($_SESSION['user_id']) && isset($_SESSION['email'])){
 
     $insertQuery = "INSERT INTO authenthication(user_id,timestamp,otp) VALUES ('$user','$date','$otp')";
     $result=mysqli_query($con,$insertQuery);
-   $sql=select * from stmp where id='1';
+   $sql="select * from stmp where id='1'";
 	$val=mysqli_connect($con,$sql);
 	$row=mysqli_fetch_assoc($val);
 
@@ -62,7 +62,7 @@ try {
     $mail->Port       = 465;                                    // TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     // Recipients
-    $mail->setFrom('$row['email'], 'OTP');
+    $mail->setFrom($row['email'], 'OTP');
     $mail->addAddress($email, 'OTP');     // Add a recipient
     
     // Content
