@@ -82,7 +82,7 @@ try {
     session_unset();
     $_SESSION['error']=$mail->ErrorInfo;
     
-   header("location:Login.php");
+   header("location:login.php");
    exit;
 
 }
