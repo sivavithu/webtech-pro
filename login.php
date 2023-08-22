@@ -46,7 +46,7 @@
             </div>
         </form>
         <div class="forgotpass">
-            <a href="./otp.php"><button>forgot password</button></a>
+            <a href="/otp.php"><button>forgot password</button></a>
         </div>
     </div>
 
@@ -61,10 +61,10 @@
     }
     if (isset($_SESSION['user_id'])) {
         if ($_SESSION['role'] == 'admin') {
-            header("location:./adminuser.php");
+            header("location:/adminuser.php");
             exit;
         } else {
-            header("location:./student/home.php");
+            header("location:/student/home.php");
             exit;
         }
     }
@@ -87,7 +87,7 @@
                 $_SESSION['user_id'] = $row['user_id'];
                 $_SESSION['role'] = $row['role'];
                
-                  header("location:./index.php");
+                  header("location:/index.php");
                   exit;
             } else {
                 echo "<script>showerr();</script>";
