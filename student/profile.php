@@ -147,7 +147,7 @@
         </div>	
  <?php }
   else{
-    header("location:Login.php");
+    header("location:login.php");
    exit;
 } ?>
     </body>
